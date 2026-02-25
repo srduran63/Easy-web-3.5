@@ -9,7 +9,7 @@ async function enviarAGoogleSheets(datos) {
         if (window.location.hostname === 'localhost') {
             backendURL = 'http://localhost:3001/api/guardar-sheets';
         } else {
-            backendURL = 'https://easyweb-1gjwx5pck-srduran63s-projects.vercel.app/api/guardar-sheets';
+            backendURL = window.location.origin + '/api/guardar-sheets';
         }
         
         const response = await fetch(backendURL, {
