@@ -4,9 +4,13 @@ async function enviarAGoogleSheets(datos) {
     try {
         console.log('📤 Enviando a Google Sheets:', datos);
         
-        // Usar localhost para desarrollo
-        // Si subes a producción, cambia esta URL
-        const backendURL = 'http://localhost:3001/api/guardar-sheets';
+        // Detectar entorno y usar la URL correcta
+        let backendURL = '';
+        if (window.location.hostname === 'localhost') {
+            backendURL = 'http://localhost:3001/api/guardar-sheets';
+        } else {
+            backendURL = 'https://easyweb-1gjwx5pck-srduran63s-projects.vercel.app/api/guardar-sheets';
+        }
         
         const response = await fetch(backendURL, {
             method: 'POST',
