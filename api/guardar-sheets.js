@@ -22,6 +22,16 @@ export default async function handler(req, res) {
     });
     return res.status(200).json({ success: true, message: 'Datos guardados correctamente', data: response.data });
   } catch (error) {
-    return res.status(500).json({ success: false, error: 'Error al guardar en Google Sheets' });
+    // Log detallado
+    console.error('❌ Error al guardar en Google Sheets:', error.message);
+    if (error.response) {
+      console.error('Respuesta de Google Sheets:', error.response.data);
+      return res.status(500).json({
+        success: false,
+        error: 'Error al guardar en Google Sheets',
+        details: error.response.data
+      });
+    }
+    return res.status(500).json({ success: false, error: error.message });
   }
 }
