@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Web - Tu Negocio en Línea</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .gradient-bg { background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); }
+        .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+        .price-card:hover { transform: translateY(-10px); transition: all 0.3s ease; }
+        
+        /* Animación para el botón de WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 100;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #128c7e;
+            color: #FFF;
+        }
+        .pulse {
+            animation: pulse-animation 2s infinite;
+        }
+        @keyframes pulse-animation {
+            0% { box-shadow: 0 0 0 0px rgba(37, 211, 102, 0.7); }
+            100% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Botón Flotante de WhatsApp -->
+    <a href="https://wa.link/q074vi" class="whatsapp-float pulse" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Header / Navegación -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-indigo-600">Easy<span class="text-gray-900">Web</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="text-gray-600 hover:text-indigo-600 transition font-medium">Inicio</a>
+                    <a href="#precios" class="text-gray-600 hover:text-indigo-600 transition font-medium">Precios</a>
+                    <a href="#crear" class="bg-indigo-600 text-white px-6 py-2 rounded-full hover:bg-indigo-700 transition shadow-md">Empezar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="pt-32 pb-20 gradient-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <span class="bg-white/20 px-4 py-1 rounded-full text-sm font-semibold mb-4 inline-block">¡Oferta Especial! Web desde $70</span>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">Tu presencia digital, <br>más fácil que nunca.</h1>
+            <p class="text-xl mb-10 text-indigo-100 max-w-2xl mx-auto">Transformamos la información de tu negocio en una página web profesional de alto impacto.</p>
+            <a href="#crear" class="bg-white text-indigo-600 px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:bg-gray-100 transition inline-block">Crear mi Web</a>
+        </div>
+    </section>
+
+    <!-- Precios -->
+    <section id="precios" class="py-20 bg-gray-50 border-y border-gray-200">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4 text-gray-900">Paquetes Flexibles</h2>
+            <p class="text-center text-gray-600 mb-12">Calidad profesional al mejor precio del mercado</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Económico -->
+                <div class="bg-white p-8 rounded-3xl border border-gray-200 price-card shadow-sm">
+                    <h3 class="text-xl font-bold mb-2">Web Base</h3>
+                    <p class="text-sm text-gray-500 mb-6">Ideal para empezar hoy mismo.</p>
+                    <div class="text-5xl font-extrabold mb-6 text-indigo-600">$70 <span class="text-base text-gray-400 font-normal">/ pago único</span></div>
+                    <ul class="space-y-4 mb-8 text-gray-600">
+                        <li><i class="fas fa-check-circle text-indigo-500 mr-2"></i> 1 Página (Landing Page)</li>
+                        <li><i class="fas fa-check-circle text-indigo-500 mr-2"></i> Diseño Responsivo</li>
+                        <li><i class="fas fa-check-circle text-indigo-500 mr-2"></i> Botón de WhatsApp</li>
+                        <li><i class="fas fa-check-circle text-indigo-500 mr-2"></i> Mapa de Ubicación</li>
+                    </ul>
+                    <a href="#crear" class="block text-center w-full py-3 rounded-xl border-2 border-indigo-600 text-indigo-600 font-bold hover:bg-indigo-50 transition" onclick="seleccionarPaquete('Web Base')">Elegir Base</a>
+                </div>
+                <!-- Intermedio -->
+                <div class="bg-white p-8 rounded-3xl border-2 border-indigo-600 shadow-xl relative price-card">
+                    <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-indigo-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase">Recomendado</span>
+                    <h3 class="text-xl font-bold mb-2">Negocio Profesional</h3>
+                    <p class="text-sm text-gray-500 mb-6">La mejor opción para crecer.</p>
+                    <div class="text-5xl font-extrabold mb-6 text-indigo-600">$150 <span class="text-base text-gray-400 font-normal">/ pago único</span></div>
+                    <ul class="space-y-4 mb-8 text-gray-600">
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Hasta 4 Secciones</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Galería de Productos</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Optimización en Google</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Formulario Avanzado</li>
+                    </ul>
+                    <a href="#crear" class="block text-center w-full py-3 rounded-xl bg-indigo-600 text-white font-bold hover:bg-indigo-700 transition" onclick="seleccionarPaquete('Negocio Profesional')">Elegir Pro</a>
+                </div>
+                <!-- Avanzado -->
+                <div class="bg-white p-8 rounded-3xl border border-gray-200 price-card shadow-sm">
+                    <h3 class="text-xl font-bold mb-2">E-Commerce</h3>
+                    <p class="text-sm text-gray-500 mb-6">Tu tienda abierta 24/7.</p>
+                    <div class="text-5xl font-extrabold mb-6 text-indigo-600">$350 <span class="text-base text-gray-400 font-normal">/ pago único</span></div>
+                    <ul class="space-y-4 mb-8 text-gray-600">
+                        <li><i class="fas fa-check-circle text-indigo-500 mr-2"></i> Carrito de Compras</li>
+                        <li><i class="fas fa-check-circle text-indigo-500 mr-2"></i> Pasarela de Pagos</li>
+                        <li><i class="fas fa-check-circle text-indigo-500 mr-2"></i> Catálogo Ilimitado</li>
+                        <li><i class="fas fa-check-circle text-indigo-500 mr-2"></i> Hosting Incluido</li>
+                    </ul>
+                    <a href="#crear" class="block text-center w-full py-3 rounded-xl border-2 border-indigo-600 text-indigo-600 font-bold hover:bg-indigo-50 transition" onclick="seleccionarPaquete('E-Commerce')">Elegir Tienda</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario -->
+    <section id="crear" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="glass-card p-8 md:p-12 rounded-3xl shadow-2xl border border-indigo-100">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-2">Cuéntanos sobre tu Negocio</h2>
+                    <p class="text-gray-600 italic font-medium">Desde solo $70, inicia tu camino digital hoy.</p>
+                </div>
+
+                <form id="easyWebForm" class="space-y-8">
+                    <!-- Datos del Negocio -->
+                    <div class="space-y-4">
+                        <h3 class="text-lg font-bold text-indigo-600 flex items-center">
+                            <span class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center mr-2 text-sm">1</span>
+                            Información del Negocio
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-1">Nombre Comercial</label>
+                                <input type="text" required placeholder="Ej: Pizza Gourmet" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 outline-none transition" name="nombreComercial">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-1">Dirección Completa</label>
+                                <input type="text" required placeholder="Calle, Número, Ciudad" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 outline-none transition" name="direccionCompleta">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Datos del Representante -->
+                    <div class="space-y-4">
+                        <h3 class="text-lg font-bold text-indigo-600 flex items-center">
+                            <span class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center mr-2 text-sm">2</span>
+                            Datos del Representante
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-1">Tu Nombre</label>
+                                <input type="text" required placeholder="Nombre del dueño" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 outline-none transition" name="nombreRepresentante">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-1">Celular / WhatsApp</label>
+                                <input type="tel" required placeholder="Escribe tu número" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 outline-none transition" name="celularRepresentante">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Productos -->
+                    <div class="space-y-4">
+                        <h3 class="text-lg font-bold text-indigo-600 flex items-center">
+                            <span class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center mr-2 text-sm">3</span>
+                            Productos y Servicios
+                        </h3>
+                        <label class="block text-sm font-semibold text-gray-700 mb-1">¿Qué vendes u ofreces?</label>
+                        <textarea required rows="3" placeholder="Ej: Vendo ropa de bebé, ofrezco asesoría contable, etc." class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 outline-none transition" name="productosServicios"></textarea>
+                    </div>
+
+                    <!-- Estilo -->
+                    <div class="space-y-4">
+                        <h3 class="text-lg font-bold text-indigo-600 flex items-center">
+                            <span class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center mr-2 text-sm">4</span>
+                            Estilo Favorito
+                        </h3>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <label class="cursor-pointer group">
+                                <input type="radio" name="estilo" class="peer hidden" checked>
+                                <div class="p-4 border border-gray-200 rounded-xl text-center peer-checked:border-indigo-600 peer-checked:bg-indigo-50 transition group-hover:bg-gray-50">
+                                    <i class="fas fa-star mb-2 text-xl text-indigo-400"></i>
+                                    <span class="block text-xs font-bold uppercase">Moderno</span>
+                                </div>
+                            </label>
+                            <label class="cursor-pointer group">
+                                <input type="radio" name="estilo" class="peer hidden">
+                                <div class="p-4 border border-gray-200 rounded-xl text-center peer-checked:border-indigo-600 peer-checked:bg-indigo-50 transition group-hover:bg-gray-50">
+                                    <i class="fas fa-heart mb-2 text-xl text-pink-400"></i>
+                                    <span class="block text-xs font-bold uppercase">Amigable</span>
+                                </div>
+                            </label>
+                            <label class="cursor-pointer group">
+                                <input type="radio" name="estilo" class="peer hidden">
+                                <div class="p-4 border border-gray-200 rounded-xl text-center peer-checked:border-indigo-600 peer-checked:bg-indigo-50 transition group-hover:bg-gray-50">
+                                    <i class="fas fa-briefcase mb-2 text-xl text-blue-400"></i>
+                                    <span class="block text-xs font-bold uppercase">Formal</span>
+                                </div>
+                            </label>
+                            <label class="cursor-pointer group">
+                                <input type="radio" name="estilo" class="peer hidden">
+                                <div class="p-4 border border-gray-200 rounded-xl text-center peer-checked:border-indigo-600 peer-checked:bg-indigo-50 transition group-hover:bg-gray-50">
+                                    <i class="fas fa-rocket mb-2 text-xl text-purple-400"></i>
+                                    <span class="block text-xs font-bold uppercase">Tecnológico</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Paquete seleccionado -->
+                    <input type="hidden" name="paqueteSeleccionado" id="paqueteSeleccionado">
+
+                    <button type="submit" class="w-full bg-indigo-600 text-white py-4 rounded-xl font-bold text-xl shadow-lg hover:bg-indigo-700 transition transform hover:scale-105 active:scale-95">
+                        Solicitar mi Web por $70
+                    </button>
+                </form>
+
+                <div id="successMessage" class="hidden mt-6 p-4 bg-green-50 text-green-700 border border-green-200 rounded-xl text-center font-bold animate-bounce">
+                    🚀 ¡Formulario enviado! Te contactaremos pronto al WhatsApp.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="mb-4 text-2xl font-bold">Easy<span class="text-indigo-400">Web</span></div>
+            <p class="text-gray-400 mb-8 max-w-sm mx-auto">Calidad profesional para pequeños negocios que piensan en grande.</p>
+            <div class="flex justify-center space-x-6 text-xl mb-10 text-gray-400">
+                <!-- Solo WhatsApp en redes sociales -->
+                <a href="https://wa.link/q074vi" class="hover:text-white transition flex items-center space-x-2">
+                    <i class="fab fa-whatsapp"></i>
+                    <span class="text-sm font-medium">Contáctanos por WhatsApp</span>
+                </a>
+            </div>
+            <div class="pt-8 border-t border-gray-800 text-gray-600 text-xs">
+                &copy; 2024 Easy Web. Diseño Web accesible.
+            </div>
+        </div>
+    </footer>
+
+    <!-- <script src="enviarAGoogleSheets.js"></script>
+    <script>
+        function seleccionarPaquete(paquete) {
+            document.getElementById('paqueteSeleccionado').value = paquete;
+        }
+
+        document.getElementById('easyWebForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const form = e.target;
+            const btn = form.querySelector('button');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+            btn.disabled = true;
+
+            // Recolectar todos los campos del formulario
+            const formData = new FormData(form);
+            let mensaje = '¡Hola!\n\nQuiero solicitar mi web desde EasyWeb.\n\n';
+            mensaje += `Paquete de interés: ${formData.get('paqueteSeleccionado') || 'No especificado'}\n\n`;
+            mensaje += '1. Información del Negocio\n';
+            mensaje += `Nombre Comercial: ${formData.get('nombreComercial') || ''}\n`;
+            mensaje += `Dirección: ${formData.get('direccionCompleta') || ''}\n\n`;
+            mensaje += '2. Datos del Representante\n';
+            mensaje += `Nombre: ${formData.get('nombreRepresentante') || ''}\n`;
+            mensaje += `Celular/WhatsApp: ${formData.get('celularRepresentante') || ''}\n\n`;
+            mensaje += '3. Productos y Servicios\n';
+            mensaje += `${formData.get('productosServicios') || ''}\n\n`;
+            // Estilo Favorito
+            mensaje += '4. Estilo Favorito\n';
+            const estilo = form.querySelector('input[name="estilo"]:checked');
+            mensaje += `${estilo ? estilo.nextElementSibling.querySelector('span').textContent : ''}\n`;
+
+            // Preparar datos para Google Sheets
+            const datos = {
+                paquete: formData.get('paqueteSeleccionado') || '',
+                nombreComercial: formData.get('nombreComercial') || '',
+                direccionCompleta: formData.get('direccionCompleta') || '',
+                nombreRepresentante: formData.get('nombreRepresentante') || '',
+                celularRepresentante: formData.get('celularRepresentante') || '',
+                productosServicios: formData.get('productosServicios') || '',
+                estilo: estilo ? estilo.nextElementSibling.querySelector('span').textContent : ''
+            };
+            // Guardar en Google Sheets
+            await enviarAGoogleSheets(datos);
+
+            // Abrir WhatsApp
+            window.open(`https://wa.link/q074vi?text=${encodeURIComponent(mensaje)}`,'_blank');
+
+            setTimeout(() => {
+                form.reset();
+                document.getElementById('successMessage').classList.remove('hidden');
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                setTimeout(() => {
+                    document.getElementById('successMessage').classList.add('hidden');
+                }, 6000);
+            }, 1800);
+        });
+    </script> -->
+
+    <!-- PRIMERO cargamos la función -->
+    <script src="enviarAGoogleSheets.js"></script>
+
+    <script>
+        function seleccionarPaquete(paquete) {
+            document.getElementById('paqueteSeleccionado').value = paquete;
+        }
+
+        document.getElementById('easyWebForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const form = e.target;
+            const btn = form.querySelector('button');
+            const originalText = btn.innerHTML;
+            
+            // Mostrar estado "enviando"
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Guardando...';
+            btn.disabled = true;
+
+            // Recolectar todos los campos del formulario
+            const formData = new FormData(form);
+            
+            // Preparar datos para Google Sheets
+            const estilo = form.querySelector('input[name="estilo"]:checked');
+            const datos = {
+                paquete: formData.get('paqueteSeleccionado') || '',
+                nombreComercial: formData.get('nombreComercial') || '',
+                direccionCompleta: formData.get('direccionCompleta') || '',
+                nombreRepresentante: formData.get('nombreRepresentante') || '',
+                celularRepresentante: formData.get('celularRepresentante') || '',
+                productosServicios: formData.get('productosServicios') || '',
+                estilo: estilo ? estilo.nextElementSibling.querySelector('span').textContent : '',
+                fecha: new Date().toLocaleString()
+            };
+
+            // 1. Guardar en Google Sheets
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Guardando en Google Sheets...';
+            const guardado = await enviarAGoogleSheets(datos);
+            
+            // 2. Preparar mensaje para WhatsApp
+            let mensaje = '¡Hola! Quiero solicitar mi web desde EasyWeb.\n\n';
+            mensaje += `📦 Paquete: ${datos.paquete}\n`;
+            mensaje += `🏢 Negocio: ${datos.nombreComercial}\n`;
+            mensaje += `📍 Dirección: ${datos.direccionCompleta}\n`;
+            mensaje += `👤 Contacto: ${datos.nombreRepresentante}\n`;
+            mensaje += `📱 WhatsApp: ${datos.celularRepresentante}\n`;
+            mensaje += `📝 Productos: ${datos.productosServicios}\n`;
+            mensaje += `🎨 Estilo: ${datos.estilo}\n\n`;
+            
+            if (guardado) {
+                mensaje += `✅ Datos guardados automáticamente en Google Sheets.`;
+            } else {
+                mensaje += `⚠️ Nota: Hubo un problema al guardar en Google Sheets, pero igual te contactamos.`;
+            }
+
+            // 3. Abrir WhatsApp
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Abriendo WhatsApp...';
+            window.open(`https://wa.link/q074vi?text=${encodeURIComponent(mensaje)}`,'_blank');
+
+            // 4. Mostrar mensaje de éxito
+            setTimeout(() => {
+                form.reset();
+                const successMsg = document.getElementById('successMessage');
+                successMsg.classList.remove('hidden');
+                
+                // Mensaje diferente según si se guardó en Sheets
+                if (guardado) {
+                    successMsg.innerHTML = '✅ ¡Todo listo! Datos guardados en Google Sheets y WhatsApp abierto. Te contactaremos pronto.';
+                } else {
+                    successMsg.innerHTML = '⚠️ WhatsApp abierto, pero hubo un problema con Google Sheets. Igual te contactaremos.';
+                }
+                
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                
+                setTimeout(() => {
+                    successMsg.classList.add('hidden');
+                }, 6000);
+            }, 1800);
+        });
+    </script>
+
+</body>
+</html>
